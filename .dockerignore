@@ -1,0 +1,9 @@
+.git
+.env
+*.md
+build/node_modules
+app/data
+app/public/data
+app/public/algorytmy.html
+app/public/vendor
+app/public/mock

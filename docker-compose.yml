@@ -1,0 +1,14 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: solar:latest
+    ports:
+      - "${SOLAR_PORT:-8080}:8080"
+    environment:
+      SOLAR_DEFAULT_LAT: ${SOLAR_DEFAULT_LAT:-51.897202}
+      SOLAR_DEFAULT_LON: ${SOLAR_DEFAULT_LON:-21.615002}
+      SOLAR_DEFAULT_ELEV: ${SOLAR_DEFAULT_ELEV:-100}
+      SOLAR_DEFAULT_NAME: ${SOLAR_DEFAULT_NAME:-Garwolin}
+    restart: unless-stopped

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Niebo teraz</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Przejdź do treści</a>
+  <header class="top">
+    <div class="titles">
+      <h1 data-i18n="app.title">Niebo teraz</h1>
+      <p class="muted" data-i18n="app.subtitle"></p>
+      <p class="small"><a class="doc-link" href="algorytmy.html">Algorytmy i wzory</a></p>
+    </div>
+    <div class="status">
+      <span id="live-badge" class="badge ok" hidden data-i18n="live.status"></span>
+      <span id="loading" class="badge" hidden role="status" data-i18n="loading"></span>
+    </div>
+  </header>
+
+  <div id="error" class="banner" role="alert" hidden>
+    <span id="error-text"></span>
+    <button type="button" id="error-close" data-i18n-aria="err.close">×</button>
+  </div>
+
+  <form id="form" class="controls" autocomplete="off" novalidate>
+    <fieldset>
+      <legend data-i18n="ctl.location"></legend>
+      <div class="fields">
+        <label for="lat"><span data-i18n="ctl.lat"></span>
+          <input id="lat" name="lat" type="number" step="any" min="-90" max="90" inputmode="decimal"></label>
+        <label for="lon"><span data-i18n="ctl.lon"></span>
+          <input id="lon" name="lon" type="number" step="any" min="-180" max="180" inputmode="decimal"></label>
+        <label for="elev"><span data-i18n="ctl.elev"></span>
+          <input id="elev" name="elev" type="number" step="any" inputmode="decimal"></label>
+      </div>
+      <div class="row">
+        <button type="button" id="my-location" data-i18n="ctl.myLocation"></button>
+        <button type="button" id="default-location" data-i18n="ctl.default"></button>
+        <span class="muted"><span data-i18n="ctl.placeName"></span>: <strong id="place">—</strong></span>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend data-i18n="ctl.time"></legend>
+      <div class="fields">
+        <label for="datetime"><span data-i18n="ctl.datetime"></span>
+          <input id="datetime" name="datetime" type="datetime-local"></label>
+      </div>
+      <div class="row">
+        <button type="button" id="now" data-i18n="ctl.now"></button>
+        <label class="check" for="live"><input id="live" type="checkbox"><span data-i18n="ctl.live"></span></label>
+      </div>
+      <div id="steps" class="row steps" role="group" data-i18n-aria="ctl.steps"></div>
+    </fieldset>
+  </form>
+
+  <main id="main" class="grid">
+    <section class="panel" id="p-time" aria-labelledby="h-time"><h2 id="h-time" data-i18n="panel.time"></h2><div class="panel-body"></div></section>
+    <section class="panel" id="p-sun" aria-labelledby="h-sun"><h2 id="h-sun" data-i18n="panel.sun"></h2><div class="panel-body"></div></section>
+    <section class="panel" id="p-moon" aria-labelledby="h-moon"><h2 id="h-moon" data-i18n="panel.moon"></h2><div class="panel-body"></div></section>
+    <section class="panel wide" id="p-planets" aria-labelledby="h-planets"><h2 id="h-planets" data-i18n="panel.planets"></h2><div class="panel-body"></div></section>
+    <section class="panel wide" id="p-dome" aria-labelledby="h-dome"><h2 id="h-dome" data-i18n="panel.dome"></h2><div class="panel-body"></div></section>
+    <section class="panel wide" id="p-orrery" aria-labelledby="h-orrery"><h2 id="h-orrery" data-i18n="panel.orrery"></h2><div class="panel-body"></div></section>
+    <section class="panel wide" id="p-ecliptic" aria-labelledby="h-ecliptic"><h2 id="h-ecliptic" data-i18n="panel.ecliptic"></h2><div class="panel-body"></div></section>
+    <section class="panel wide" id="p-chart" aria-labelledby="h-chart"><h2 id="h-chart" data-i18n="panel.chart"></h2><div class="panel-body"></div></section>
+    <section class="panel wide" id="p-map" aria-labelledby="h-map"><h2 id="h-map" data-i18n="panel.map"></h2><div class="panel-body"></div></section>
+    <section class="panel wide" id="p-events" aria-labelledby="h-events"><h2 id="h-events" data-i18n="panel.events"></h2><div class="panel-body"></div></section>
+    <section class="panel wide" id="p-separations" aria-labelledby="h-separations"><h2 id="h-separations" data-i18n="panel.separations"></h2><div class="panel-body"></div></section>
+  </main>
+  <footer class="site-footer muted small">
+    Nazwy miejscowości: <a href="https://www.geonames.org/">GeoNames</a> (CC BY 4.0).
+    <a href="algorytmy.html">Algorytmy i wzory</a>
+  </footer>
+  <noscript><p class="banner">Ta strona wymaga włączonej obsługi JavaScript.</p></noscript>
+</body>
+</html>

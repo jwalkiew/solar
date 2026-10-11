@@ -1,0 +1,15 @@
+{
+  "name": "solar-build-data",
+  "private": true,
+  "description": "Build-time generator of data files for the solar web service",
+  "type": "module",
+  "dependencies": {
+    "@photostructure/tz-lookup": "11.7.0",
+    "astronomia": "4.2.0",
+    "cities.json": "1.1.64",
+    "katex": "0.16.22",
+    "marked": "15.0.12",
+    "topojson-client": "3.1.0",
+    "world-atlas": "2.0.2"
+  }
+}

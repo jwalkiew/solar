@@ -1,0 +1,16 @@
+# used on Apache hosting without Docker (the Docker image sets the same in docker/apache-solar.conf)
+Options -Indexes
+DirectoryIndex index.html
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "no-referrer"
+    Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; frame-ancestors 'none'"
+</IfModule>
+
+# default location and cache directory; uncomment to override the built-in defaults
+#SetEnv SOLAR_DEFAULT_LAT 51.897202
+#SetEnv SOLAR_DEFAULT_LON 21.615002
+#SetEnv SOLAR_DEFAULT_ELEV 100
+#SetEnv SOLAR_DEFAULT_NAME Garwolin
+#SetEnv SOLAR_CACHE_DIR /path/outside/document/root/solar-cache

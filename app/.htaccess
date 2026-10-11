@@ -1,0 +1,2 @@
+# single-directory hosting: copied to public_html/app/ next to lib/ and data/ to keep them off the web
+Require all denied
